@@ -1,0 +1,14 @@
+#Tüm .env Dosyalarının Gizlendiği Alan
+services/**/.env
+
+#Docker Compose Dosyası
+docker-compose.yml
+
+#Node Modules
+**/node_modules/
+
+# Log dosyaları
+*.log
+
+# Diğer gereksiz dosyalar
+.DS_Store
