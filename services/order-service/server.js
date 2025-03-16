@@ -1,13 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
 const logger = require('/app/common/utils/logger');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
-const productRoutes = require('./routes/productRoutes');
-const startOrderConsumer = require('./consumers/orderConsumer');
+const orderRoutes = require('./routes/orderRoutes');
 
-// Express uygulamasını başlat
 const app = express();
 const PORT = process.env.PORT || 3002;
 
@@ -19,14 +16,12 @@ app.use(express.json());
 connectDB();
 
 // Rotalar
-app.use('/api/products', productRoutes);
+app.use('/api/orders', orderRoutes);
 
-// Hata yakalama middleware - tüm route'lardan sonra tanımlanmalı
+// Hata yakalama middleware
 app.use(errorHandler);
 
 // Sunucuyu başlat
 app.listen(PORT, () => {
-    logger.info(`Ürün Servisi ${PORT} portunda çalışıyor`);
-    // RabbitMQ consumer'ı başlat
-    startOrderConsumer();
+    logger.info(`Sipariş Servisi ${PORT} portunda çalışıyor`);
 });

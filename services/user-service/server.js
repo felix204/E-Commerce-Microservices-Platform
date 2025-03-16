@@ -4,6 +4,7 @@ const logger = require('/app/common/utils/logger');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 const userRoutes = require('./routes/userRoutes');
+const startOrderConsumer = require('./consumers/orderConsumer');
 
 // Express uygulamasını başlat
 const app = express();
@@ -25,5 +26,7 @@ app.use(errorHandler);
 // Sunucuyu başlat
 app.listen(PORT, () => {
     logger.info(`Kullanıcı Servisi ${PORT} portunda çalışıyor`);
+    // RabbitMQ consumer'ı başlat
+    startOrderConsumer();
 });
 
