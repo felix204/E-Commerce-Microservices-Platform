@@ -119,16 +119,6 @@ npm run test
 
 Bu proje MIT lisansı altında lisanslanmıştır.
 
-## 👥 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'feat: Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
-
 ## 📞 İletişim
 
-[İsminiz] - [Email adresiniz]
-
-Proje Linki: [proje-url]
+[Aydın Can İçiğen] - [icigenaydincan@gmail.com]
