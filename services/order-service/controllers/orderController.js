@@ -1,10 +1,10 @@
-const Order = require('../models/orderModel');
+const Order = require('../model/orderModel');
 const ResponseHandler = require('/app/common/utils/responsHandler');
 const amqp = require('amqplib');
 
 // RabbitMQ bağlantısı için yardımcı fonksiyon
 async function connectToRabbitMQ() {
-  const connection = await amqp.connect('amqp://rabbitmq');
+  const connection = await amqp.connect(process.env.RABBITMQ_URL || 'amqp://rabbitmq');
   const channel = await connection.createChannel();
   await channel.assertExchange('order_events', 'topic', { durable: true });
   return { connection, channel };
