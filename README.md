@@ -69,10 +69,13 @@ docker-compose up --build
 ### User Service (3001)
 - POST /api/users/register - Kullanıcı kaydı
 - POST /api/users/login - Kullanıcı girişi
+- PUT /api/users/profile - Kullancı güncelleme
+- GET /api/users/profile - Kullanıcı listele
 
 ### Product Service (3002)
 - GET /api/products - Ürünleri listele
 - POST /api/products - Yeni ürün ekle
+- GET api/products/:id -ID'ye göre ürün getir
 - PUT /api/products/:id - Ürün güncelle
 - DELETE /api/products/:id - Ürün sil
 
