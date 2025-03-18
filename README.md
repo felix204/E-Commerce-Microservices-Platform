@@ -119,11 +119,6 @@ RabbitMQ üzerinde kullanılan exchange ve kuyruklar:
 - CORS koruması
 - Ortam değişkenleri ile hassas bilgi yönetimi
 
-## 🔍 Test
-
-```bash
-npm run test
-```
 
 ## 📝 Lisans
 
