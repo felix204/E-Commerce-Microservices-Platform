@@ -82,11 +82,18 @@ docker-compose up --build
 ### Order Service (3003)
 - POST /api/orders - Sipariş oluştur
 - GET /api/orders - Siparişleri listele
-- PUT /api/orders/:id - Sipariş durumu güncelle
+- GET /api/orders/:orderId - Sipariş detayını getir
+- GET /api/orders/user/:userId - Kullanıcının siparişlerini listele
+- PUT /api/orders/:orderId/status - Sipariş durumu güncelle
+- DELETE /api/orders/orderId - Sipariş sil
+  
 
 ### Payment Service (3004)
 - POST /api/payments - Ödeme işlemi başlat
-- GET /api/payments/:id - Ödeme durumu sorgula
+- GET /api/payments/:id - ID'ye göre ödeme getir
+- GET /api/payment/order/:orderId - Sipariş ID'sine göre ödemeleri getir
+- GET /api/payment/user/:userId - Kullanıcı ID'sine göre ödemeleri getir
+
 
 ## 📊 Veritabanı Şeması
 
